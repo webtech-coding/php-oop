@@ -1,0 +1,20 @@
+{
+    "name": "blog/oop",
+    "authors": [
+        {
+            "name": "shovit"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "APP\\":"app/",
+            "Core\\":"core/",
+            "Database\\":"database/",
+            "Models\\":"models/"
+        },
+        "files": [
+            "utils/helpers.php"
+        ]
+    }
+}
