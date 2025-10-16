@@ -49,6 +49,7 @@ class ComposerStaticInitaa5a56118ff4b93e146869dd2aaa7f51
     );
 
     public static $classMap = array (
+        'App\\Admin\\DahboardController' => __DIR__ . '/../..' . '/app/Admin/DahboardController.php',
         'App\\Controller\\AuthController' => __DIR__ . '/../..' . '/app/Controller/AuthController.php',
         'App\\Controller\\CommentController' => __DIR__ . '/../..' . '/app/Controller/CommentController.php',
         'App\\Controller\\HomeController' => __DIR__ . '/../..' . '/app/Controller/HomeController.php',
@@ -59,6 +60,7 @@ class ComposerStaticInitaa5a56118ff4b93e146869dd2aaa7f51
         'App\\Services\\Auth' => __DIR__ . '/../..' . '/app/Services/Auth.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Core\\Config' => __DIR__ . '/../..' . '/core/Config.php',
+        'Core\\Gate' => __DIR__ . '/../..' . '/core/Gate.php',
         'Core\\IMiddleware' => __DIR__ . '/../..' . '/core/IMiddleware.php',
         'Core\\MiddlewarePipeline' => __DIR__ . '/../..' . '/core/MiddlewarePipeline.php',
         'Core\\Router' => __DIR__ . '/../..' . '/core/Router.php',

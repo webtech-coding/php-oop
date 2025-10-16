@@ -1,4 +1,5 @@
 <?php
+    use App\Admin\DahboardController;
     use App\Controller\AuthController;
     use App\Controller\CommentController;
     use App\Controller\HomeController;
@@ -23,6 +24,13 @@
     $router->get('/login', [AuthController::class,'loginView']);
     $router->post('/login', [AuthController::class,'handleUserLogin']);
     $router->post('/logout', [AuthController::class,'logout']);
+
+
+    /**
+     * Admin routes
+     */
+
+     $router->get('/admin', [DahboardController::class, 'index'])->middlewares([AuthMiddleware::class]);
 
    
 ?>

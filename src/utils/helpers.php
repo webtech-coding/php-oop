@@ -1,5 +1,7 @@
 <?php
 
+use Core\Gate;
+
 function redirect(string $uri='/'){
     header("Location:{$uri}");
     exit();
@@ -44,4 +46,8 @@ function verify_csrf(string $user_token): bool {
 
     return $isValid;
 
+}
+
+function verify($name, $user, ...$params): bool {
+    return Gate::verify($name, $user, ...$params);
 }

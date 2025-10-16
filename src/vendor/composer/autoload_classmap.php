@@ -6,6 +6,7 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Admin\\DahboardController' => $baseDir . '/app/Admin/DahboardController.php',
     'App\\Controller\\AuthController' => $baseDir . '/app/Controller/AuthController.php',
     'App\\Controller\\CommentController' => $baseDir . '/app/Controller/CommentController.php',
     'App\\Controller\\HomeController' => $baseDir . '/app/Controller/HomeController.php',
@@ -16,6 +17,7 @@ return array(
     'App\\Services\\Auth' => $baseDir . '/app/Services/Auth.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'Core\\Config' => $baseDir . '/core/Config.php',
+    'Core\\Gate' => $baseDir . '/core/Gate.php',
     'Core\\IMiddleware' => $baseDir . '/core/IMiddleware.php',
     'Core\\MiddlewarePipeline' => $baseDir . '/core/MiddlewarePipeline.php',
     'Core\\Router' => $baseDir . '/core/Router.php',
