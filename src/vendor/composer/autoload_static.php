@@ -50,6 +50,7 @@ class ComposerStaticInitaa5a56118ff4b93e146869dd2aaa7f51
 
     public static $classMap = array (
         'App\\Admin\\DahboardController' => __DIR__ . '/../..' . '/app/Admin/DahboardController.php',
+        'App\\Admin\\PostController' => __DIR__ . '/../..' . '/app/Admin/PostController.php',
         'App\\Controller\\AuthController' => __DIR__ . '/../..' . '/app/Controller/AuthController.php',
         'App\\Controller\\CommentController' => __DIR__ . '/../..' . '/app/Controller/CommentController.php',
         'App\\Controller\\HomeController' => __DIR__ . '/../..' . '/app/Controller/HomeController.php',

@@ -65,7 +65,6 @@ class Model {
         }else{
             return null;
         }
-        
     }
     /**
      * Summary of create
@@ -129,6 +128,35 @@ class Model {
        $sql ="SELECT *FROM $table WHERE $queryString";
        return self::query($sql, $queryParams)->fetchAll(PDO::FETCH_OBJ);
 
+    }
+
+    public static function findByIdAndDelete(int $id){
+       
+        $table = static::$table;
+        $sql = "DELETE *FROM $table WHERE id:id";
+        $prepare = self::query($sql, ['id'=>$id]);
+
+        return $prepare->rowCount();        
+    }
+
+    public static function findByIdAndUpdate(int $id, $params=[]){
+        if(!$id || !$params){
+            throw new Exception('id and update params are required');
+        }
+
+       
+        $table = static::$table;
+        $updateString ="";
+        foreach($params as $key=>$value){
+            $lastKey = array_key_last($params);
+            $updateString .= $key."=".":{$key}";
+            if($lastKey !== $key){
+                $updateString .= ",";
+            }
+        }
+        $sql = "UPDATE $table SET $updateString WHERE id=:id";
+       $prepared = self::query($sql, ["id"=>$id, ...$params]);
+       return $prepared->rowCount();
     }
 
 }

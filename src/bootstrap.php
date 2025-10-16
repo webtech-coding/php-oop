@@ -15,6 +15,8 @@ Gate::define('is-admin', function($user): bool{
     return $user->role==='admin';
 });
 
-Gate::define('edit-post', function($user, $post): bool{
+Gate::define('modify-post', function($user, $post): bool{
+    
+    
     return ($user->role=== 'admin' && $user->id=== $post->user_id);
 });

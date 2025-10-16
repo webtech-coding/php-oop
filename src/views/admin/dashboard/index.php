@@ -3,7 +3,7 @@
     <?php foreach ($posts as $post):?>
         <p>
             <a href="post/<?=$post->id?>"><?= $post->title?></a>
-            <?php if(verify('edit-post', $auth, $post)):?>
+            <?php if(verify('modify-post', $auth, $post)):?>
                 <button>Edit</button>
             <?php endif;?>
            

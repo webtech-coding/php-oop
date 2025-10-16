@@ -57,7 +57,7 @@ final class Router{
         array_push($this->routes[$method][$uri], $routesMiddlewares);
     }
 
-    public function dispatch(): void{
+    public function dispatch(): void{        
         $method = $_SERVER['REQUEST_METHOD'];
         $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);       
         $uri = rtrim($uri,'/') ?:'/';                
@@ -69,11 +69,14 @@ final class Router{
         }
 
         //if there is no exact match, look for the possible wildcard in the uri
-        foreach($this->routes[$method] as $key=>$value){            
-            $pattern = preg_replace('#\{([a-zA-Z0-9_]+)\}#', '([a-zA-Z0-9_-]+)', $key);                      
+        foreach($this->routes[$method] as $key=>$value){               
+            $pattern = preg_replace('#\{([a-zA-Z0-9_]+)\}#', '([a-zA-Z0-9_-]+)', $key); 
+            
             if (preg_match('#^' . $pattern . '$#', $uri, $matches)) {
+               
                 array_shift($matches);
                 $id= $matches[0] ?? null;
+               
                 $this->invoke($value, ['id'=> $id]);
                 return;
             }             
@@ -84,6 +87,7 @@ final class Router{
 
     private function invoke(array|callable $routerHandler, array $params=[]): void{      
         [$controller, $function] = $routerHandler;
+        
 
         $routesMiddlewares = $routerHandler[2] ?? [];
 

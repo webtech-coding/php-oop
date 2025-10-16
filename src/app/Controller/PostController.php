@@ -43,6 +43,5 @@ class PostController{
             'comments'=>$comments,
             'auth'=>Auth::getAuth()
         ]);
-    }
-    
+    }    
 }   

@@ -138,3 +138,31 @@ main{
     flex-direction: row;
 }
 
+table{
+    border:1px solid #cccccc;
+    width: 100%;
+}
+
+tr{
+    border-bottom:1px solid #cccccc;
+    text-align: center;
+    
+}
+
+td{
+    padding: 15px 0;
+}
+
+.cta{
+    display: flex;
+    justify-content: space-around;
+}
+
+.cta button:nth-child(2){
+    background-color: #d53f34;
+}
+
+
+.disabled{
+    background: #58d158 !important;
+}

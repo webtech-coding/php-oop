@@ -31,6 +31,9 @@
      */
 
      $router->get('/admin', [DahboardController::class, 'index'])->middlewares([AuthMiddleware::class]);
+     $router->get('/admin/posts', [\App\Admin\PostController::class,'index'])->middlewares([AuthMiddleware::class]);
+     $router->get('/admin/posts/{id}/edit',[\App\Admin\PostController::class,'edit'])->middlewares([AuthMiddleware::class]);
+     $router->post('/admin/posts/{id}',[\App\Admin\PostController::class,'update'])->middlewares([AuthMiddleware::class]);
 
    
 ?>
